@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: lexzetpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lexzetpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: lexzetpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: lexzetpipelinesjavascriptdocker 
+          image: alexacrtest.azurecr.io/lexzetpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
